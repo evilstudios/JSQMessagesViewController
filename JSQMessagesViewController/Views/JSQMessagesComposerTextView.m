@@ -27,6 +27,8 @@
 
 #pragma mark - Initialization
 
+@synthesize pasteDelegate = _pasteDelegate;
+
 - (void)jsq_configureTextView
 {
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
