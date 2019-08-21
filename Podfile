@@ -4,11 +4,5 @@ inhibit_all_warnings!
 target 'JSQMessages' do
 
   # Pods for JSQMessages
-  pod 'JSQSystemSoundPlayer', '~> 2.0'
-
-  target 'JSQMessagesTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  pod 'JSQSystemSoundPlayer', '~> 5.0'
 end

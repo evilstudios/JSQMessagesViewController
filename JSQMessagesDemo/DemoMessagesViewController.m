@@ -65,7 +65,7 @@
     self.showLoadEarlierMessagesHeader = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
-                                                                              style:UIBarButtonItemStyleBordered
+                                                                              style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(receiveMessagePressed:)];
 
@@ -589,12 +589,19 @@
 {
     NSLog(@"Custom action received! Sender: %@", sender);
 
-    [[[UIAlertView alloc] initWithTitle:@"Custom Action"
-                               message:nil
-                              delegate:nil
-                     cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil]
-     show];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Custom Action"
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil];
+
+    [alertController addAction:dismissAction];
+
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
 }
 
 
